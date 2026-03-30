@@ -21,4 +21,4 @@ JOIN competitions c ON c.id = r.competition_id AND c.start_date = t.last_date
 JOIN persons p ON p.wca_id = r.person_id
 JOIN competitions ref ON ref.id = ':COMPETITION_ID'
 WHERE TIMESTAMPDIFF(MONTH, t.last_date, ref.start_date) >= :MONTHS_INACTIVE
-ORDER BY t.last_date ASC;
+ORDER BY t.last_date ASC, person_name;
